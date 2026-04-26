@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The 10-minute Reset by Gisthaura</title>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --blue-light: #76ABDF;
+      --blue-dark: #1F305E;
+      --white: #ffffff;
+      --muted: #5b6b8a;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: 'Raleway', sans-serif;
+      background: linear-gradient(135deg, #ffffff, #eef5ff);
+      color: var(--blue-dark);
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 20px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 36px;
+      font-weight: 800;
+    }
+
+    .sub {
+      margin-top: 8px;
+      color: var(--muted);
+    }
+
+    .by {
+      margin-top: 6px;
+      font-size: 14px;
+      color: #555;
+      font-weight: 500;
+    }
+
+    .highlight {
+      margin-top: 12px;
+      background: #eef5ff;
+      padding: 12px;
+      border-radius: 12px;
+      font-weight: 600;
+    }
+
+    /* TIMER */
+    .timer-box {
+      background: var(--blue-dark);
+      color: white;
+      border-radius: 20px;
+      padding: 16px;
+      text-align: center;
+      margin-top: 16px;
+    }
+
+    .timer-title {
+      font-weight: 700;
+      font-size: 16px;
+    }
+
+    .timer {
+      font-size: 64px;
+      font-weight: 800;
+      margin: 6px 0;
+    }
+
+    .timer-desc {
+      font-size: 14px;
+      opacity: 0.9;
+    }
+
+    .buttons {
+      margin-top: 12px;
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    button {
+      padding: 10px 16px;
+      border-radius: 20px;
+      border: none;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: inherit;
+    }
+
+    .primary { background: var(--blue-light); }
+    .secondary { background: white; color: var(--blue-dark); }
+
+    .progress {
+      height: 6px;
+      background: rgba(255,255,255,0.3);
+      margin-top: 10px;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .progress-bar {
+      height: 100%;
+      width: 0%;
+      background: white;
+    }
+
+    /* CARDS */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 16px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 18px;
+      padding: 16px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    }
+
+    .num {
+      background: var(--blue-dark);
+      color: white;
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      font-weight: bold;
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 180px;
+      border-radius: 12px;
+      border: 1px solid #ddd;
+      padding: 12px;
+      font-family: inherit;
+    }
+
+    .small-textarea {
+      min-height: 90px;
+    }
+
+    .cta-box {
+      margin-top: 16px;
+      background: var(--blue-dark);
+      border-radius: 16px;
+      padding: 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      color: white;
+    }
+
+    .cta-left h3 {
+      margin: 0 0 6px 0;
+      font-size: 18px;
+      color: white;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .cta-left p {
+      margin: 0;
+      color: #dbe7ff;
+      font-size: 14px;
+      line-height: 1.4;
+    }
+
+    .cta-right {
+      text-align: center;
+    }
+
+    .follow-btn {
+      background: white;
+      color: var(--blue-dark);
+      padding: 10px 18px;
+      border-radius: 20px;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .cta-note {
+      font-size: 12px;
+      margin-top: 6px;
+      color: #dbe7ff;
+    }
+
+    @media(max-width:768px){
+      .cta-box {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+    .follow-btn {
+      margin-top: 10px;
+      background: white;
+      color: var(--blue-dark);
+    }
+
+    @media(max-width:768px){
+      .grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <div class="hero">
+      <h1>The 10-minutes Reset</h1>
+      <div class="by">By Gisthaura</div>
+      <div class="highlight">One miss does not mean the day is lost. Reset momentum.</div>
+    </div>
+
+    <!-- TIMER -->
+    <div class="timer-box">
+      <div class="timer-title">Breathe. Clear your mind: Your 10-minutes start now</div>
+      <div class="timer">10:00</div>
+      
+
+      <div class="buttons">
+        <button class="primary" onclick="startTimer()">Start</button>
+        <button class="secondary" onclick="pauseTimer()">Pause</button>
+        <button class="secondary" onclick="resetTimer()">Reset</button>
+      </div>
+
+      <div class="progress"><div class="progress-bar" id="progress"></div></div>
+    </div>
+
+    <!-- CARDS -->
+    <div class="grid">
+
+      <div class="card">
+        <div class="num">1</div>
+        <h3>Clear</h3>
+        <p>Dump everything still on your mind.</p>
+        <textarea placeholder="Missed workout, delayed meeting, feeling behind… what's bothering you?"></textarea>
+      </div>
+
+      <div class="card">
+        <div class="num">2</div>
+        <h3>Pick One Win</h3>
+        <p>If I do ONE thing, what matters?</p>
+        <textarea class="small-textarea" placeholder="Finish assignment section..."></textarea>
+      </div>
+
+      <div class="card">
+        <div class="num">3</div>
+        <h3>Restart</h3>
+        <p>Start messy. Just begin.</p>
+        <label><input type="checkbox"> Not fixing the full day</label><br>
+        <label><input type="checkbox"> Restarting momentum</label><br>
+        <label><input type="checkbox"> 5 imperfect minutes</label>
+      </div>
+
+    </div>
+
+    <div class="cta-box">
+      <div class="cta-left">
+        <h3>🌱 The Full System is Coming</h3>
+        <p>This 10-minute reset is just the beginning.<br>
+        The full framework will help you stay consistent,<br>
+        even when plans break.</p>
+      </div>
+
+      <div class="cta-right">
+        <button class="follow-btn" onclick="window.open('https://www.instagram.com/gisthaura/')">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.087 3.269.222 2.76.396a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .396 2.736c-.174.509-.309 1.09-.348 1.943C.01 5.533 0 5.806 0 8c0 2.194.01 2.467.048 3.297.039.853.174 1.434.348 1.943.173.509.404.94.923 1.417.478.519.909.75 1.417.923.509.174 1.09.309 1.943.348C5.533 15.99 5.806 16 8 16c2.194 0 2.467-.01 3.297-.048.853-.039 1.434-.174 1.943-.348.509-.173.94-.404 1.417-.923.519-.478.75-.909.923-1.417.174-.509.309-1.09.348-1.943C15.99 10.467 16 10.194 16 8c0-2.194-.01-2.467-.048-3.297-.039-.853-.174-1.434-.348-1.943a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.396c-.509-.174-1.09-.309-1.943-.348C10.467.01 10.194 0 8 0zm0 3.9A4.1 4.1 0 1 1 3.9 8 4.1 4.1 0 0 1 8 3.9zm0 6.7A2.6 2.6 0 1 0 5.4 8 2.6 2.6 0 0 0 8 10.6zm4.8-6.8a1 1 0 1 1-1-1 1 1 0 0 1 1 1z"/>
+          </svg> Follow Gisthaura
+        </button>
+        <p class="cta-note">Stay updated for the full system.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    let total = 600;
+    let time = total;
+    let interval;
+
+    function update(){
+      let m = Math.floor(time/60);
+      let s = time%60;
+      document.querySelector('.timer').textContent = `${m}:${s.toString().padStart(2,'0')}`;
+      document.getElementById('progress').style.width = ((total-time)/total)*100 + "%";
+
+      // Phase logic retained (in case you want to re-enable UI later)
+      let elapsed = total - time;
+      let text = "";
+      if(elapsed < 180) text = "Clear your mind";
+      else if(elapsed < 300) text = "Pick one win";
+      else text = "Start your task now";
+
+      // Safe guard: only update if element exists
+      const el = document.getElementById('instruction');
+      if(el) el.textContent = text;
+    }
+
+    function startTimer(){
+      if(interval) return;
+      interval = setInterval(()=>{
+        if(time>0){ time--; update(); }
+        else clearInterval(interval);
+      },1000);
+    }
+
+    function pauseTimer(){ clearInterval(interval); interval=null; }
+
+    function resetTimer(){ pauseTimer(); time=total; update(); }
+
+    update();
+  </script>
+</body>
+</html>
